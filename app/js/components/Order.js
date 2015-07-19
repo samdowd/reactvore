@@ -1,28 +1,19 @@
 'use strict';
 
 import React            from 'react/addons';
-import {ListenerMixin}  from 'reflux';
-import {Navigation}     from 'react-router';
-import {Link}           from 'react-router';
-import UserActions      from '../actions/UserActions';
-import UserStore        from '../stores/UserStore';
-import RestaurantStore  from '../stores/RestaurantStore';
 
 var Order = React.createClass({
 
-  render() {
-    return (
-      <div className="panel panel-default">
-        <div className="panel-heading">
-          <h3 className="panel-title">{this.props.data.bentley} is going to {this.props.data.restaurant}</h3>
-        </div>
-        <div className="panel-body">
-          
-        </div>
-      </div>
-    );
-  }
-
+    render() {
+        return (
+          <div className="form-group">
+            <div className="col-sm-2 col-sm-offset-1"> 
+              <input className="form-control" type="number" id={'item' + this.props.item.id} />
+            </div>
+            <label className="control-label col-sm-9" htmlFor={'item' + this.props.item.id}>{this.props.item.name}</label>
+          </div>
+        )
+    }
 });
 
 export default Order;

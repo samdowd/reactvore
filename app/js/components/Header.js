@@ -29,7 +29,6 @@ var Header = React.createClass({
   render() {
     return (
       <header>
-        
         <nav className="navbar navbar-inverse">
           <div className="container-fluid">
             <div className="navbar-header">
@@ -44,8 +43,8 @@ var Header = React.createClass({
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li className="active"><Link to="Home">Home<span className="sr-only">(current)</span></Link></li>
-                <li><a href="#">My Orders</a></li>
+                <li><Link to="Home">Home<span className="sr-only">(current)</span></Link></li>
+                <li><Link to="Meals">My Meals</Link></li>
               </ul>
               <ul className="nav navbar-nav navbar-right">
                 <li>{this.renderLoginLink()}</li>
@@ -68,7 +67,7 @@ var Header = React.createClass({
         <p className="navbar-text">What is up, {this.state.user.username}!?</p>
       );
     }
-  }
+  },
 });
 
 export default Header;

@@ -13,6 +13,10 @@ var MenuItemStore = Reflux.createStore({
     });
   },
 
+  getState() {
+    return this.menuitems
+  }
+
 });
 
 export default MenuItemStore;

@@ -8,10 +8,12 @@ import UserActions      from '../actions/UserActions';
 import MenuSectionStore    from '../stores/MenuSectionStore';
 import MenuSection      from '../components/MenuSection.js';
 
+import API              from '../utils/API';
+
 var MealForm = React.createClass({
   render() {
     return (
-      <div className="modal fade" id={this.props.restaurant.id} tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div className="modal fade" id={'restaurantModal' + this.props.restaurant.id} tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -19,11 +21,13 @@ var MealForm = React.createClass({
               <h4 className="modal-title" id="myModalLabel">Someone is going to {this.props.restaurant.name}</h4>
             </div>
             <div className="modal-body">
-              {this.renderSections()}
+              <form action="http://localhost:4000/api/meals/" method="POST" className="form-horizontal">
+                {this.renderSections()}
+              </form>
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">Save changes</button>
+              <button type="submit" className="btn btn-primary" onClick={this.createMeal()}>Submit your order</button>
             </div>
           </div>
         </div>
@@ -38,6 +42,10 @@ var MealForm = React.createClass({
       renders.push(<MenuSection key={i} section={this.props.sections[i]} />)
     }
     return renders
+  },
+
+  createMeal() {
+
   }
 });
 

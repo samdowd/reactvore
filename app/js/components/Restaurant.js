@@ -27,7 +27,7 @@ var Restaurant = React.createClass({
               <p><a href={this.props.restaurant.yelpURL} target="_blank">Yelp</a></p>
             </div>
             <div className="col-md-4">
-              <button type="button" className="btn btn-default btn-lg" data-toggle="modal" data-target={'#' + this.props.restaurant.id}>
+              <button type="button" className="btn btn-default btn-lg" data-toggle="modal" data-target={'#restaurantModal' + this.props.restaurant.id}>
                 <span className="glyphicon glyphicon-plus" aria-hidden="true"></span> <p>Add to order!</p>
               </button>
             </div>

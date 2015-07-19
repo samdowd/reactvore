@@ -34,12 +34,10 @@ var MenuSection = React.createClass({
 
     render() {
         return (
-            <div>
+            <span>
                 <h3>{this.props.section.name}</h3>
-                <ul className="list-group">
-                    {this.renderItems()}
-                </ul>
-            </div>
+                {this.renderItems()}
+            </span>
         )
     },
 
