@@ -9,22 +9,33 @@ import UserActions      from '../actions/UserActions';
 import UserStore        from '../stores/UserStore';
 import RestaurantStore  from '../stores/RestaurantStore';
 
+import MealForm from '../components/MealForm';
+
 var Restaurant = React.createClass({
 
   render() {
     return (
-      <div className="panel panel-default">
-        <div className="panel-heading">
-          <h3 className="panel-title">{this.props.data.name}</h3>
-        </div>
-        <div className="panel-body">
-          <p>{this.props.data.address}</p>
-          <p>{this.props.data.phoneNumber}</p>
-          <a href={this.props.data.yelpURL} target="_blank">Yelp</a>
+      <div className="col-md-6">
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <h3 className="panel-title">{this.props.restaurant.name}</h3>
+          </div>
+          <div className="panel-body">
+            <div className="col-md-8">
+              <p>{this.props.restaurant.address}</p>
+              <p>{this.props.restaurant.phoneNumber}</p>
+              <p><a href={this.props.restaurant.yelpURL} target="_blank">Yelp</a></p>
+            </div>
+            <div className="col-md-4">
+              <button type="button" className="btn btn-default btn-lg" data-toggle="modal" data-target={'#' + this.props.restaurant.id}>
+                <span className="glyphicon glyphicon-plus" aria-hidden="true"></span> <p>Add to order!</p>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
-  }
+  },
 
 });
 

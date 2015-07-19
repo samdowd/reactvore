@@ -30,15 +30,17 @@ var LoginPage = React.createClass({
   render() {
     return (
       <DocumentTitle title="Login">
-        <section className="login-page">
+        <section className="container login-page">
 
-          <div>
-            <label for = "username">Username</label>
-            <input type = "text" name = "username" value={this.state.username} onChange={this.updateUsername} />
-            <label for = "password">Password</label>
-            <input type = "password" name = "password" value={this.state.password} onChange={this.updatePassword} />
-            <br />
-            <button onClick={this.login} name = "login">Login</button>
+          <div className="col-md-4 col-md-offset-4">
+            <form className="form-signin">
+              <h2 className="form-signin-heading">Please sign in</h2>
+              <label htmlFor="username" className="sr-only">Username</label>
+              <input type="text" name="username" value={this.state.username} onChange={this.updateUsername} id="username" className="form-control" placeholder="Username" required autofocus />
+              <label htmlFor="password" className="sr-only">Password</label>
+              <input type="password" name="password" value={this.state.password} onChange={this.updatePassword} id="password" className="form-control" placeholder="Password" required />
+              <button onClick={this.login} name="login" className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
           </div>
 
         </section>
@@ -58,7 +60,9 @@ var LoginPage = React.createClass({
     });
   },
 
-  login() {
+  login(e) {
+    e.preventDefault()
+    console.log(this.state.username)
     UserActions.Login(this.state.username, this.state.password);
   },
 

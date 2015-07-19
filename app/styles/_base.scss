@@ -4,3 +4,12 @@ body {
   background-color: $background--light;
   padding: $half-space;
 }
+
+.container {
+    padding: 20px 0px;
+}
+
+.footer {
+    height: 100px;
+    line-height: 100px;
+}

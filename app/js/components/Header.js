@@ -48,7 +48,7 @@ var Header = React.createClass({
                 <li><a href="#">My Orders</a></li>
               </ul>
               <ul className="nav navbar-nav navbar-right">
-                <li><Link to="Login">Login</Link></li>
+                <li>{this.renderLoginLink()}</li>
               </ul>
             </div>
           </div>
@@ -65,11 +65,10 @@ var Header = React.createClass({
       );
     } else {
       return (
-        <div>{this.state.user.email}</div>
+        <p className="navbar-text">What is up, {this.state.user.username}!?</p>
       );
     }
   }
-
 });
 
 export default Header;
