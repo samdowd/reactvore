@@ -22,7 +22,7 @@ build/Release
 node_modules
 bower_components
 
-# Build files
-build
+# Build files (commented out for Github Pages)
+# build
 
 .elasticbeanstalk/
