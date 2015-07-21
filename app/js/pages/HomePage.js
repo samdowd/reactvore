@@ -15,6 +15,7 @@ import OrderStore       from '../stores/OrderStore';
 
 import Restaurant    from '../components/Restaurant';
 import MealForm      from '../components/MealForm';
+import OrderForm     from '../components/OrderForm';
 
 var HomePage = React.createClass({
 
@@ -61,42 +62,7 @@ var HomePage = React.createClass({
           </button>
           <div className="modal-holder">
             {this.renderMealForms()}
-            <div className="modal fade" id='newOrderModal' tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div className="modal-dialog" role="document">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 className="modal-title" id="myModalLabel">You are a hero!</h4>
-                  </div>
-                  <div className="modal-body">
-                    <form className="form-horizontal">
-                      <div className="form-group">
-                        <label className="control-label col-sm-6" htmlFor="new-order-restaurant">Where would you like to eat?</label>
-                        <div className="col-sm-6"> 
-                          <input className="form-control" type="text" id="new-order-restaurant" />
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <label className="control-label col-sm-6" htmlFor="new-order-time">When will you be leaving?</label>
-                        <div className="col-sm-6"> 
-                          <input className="form-control" type="text" id="new-order-time" />
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <label className="control-label col-sm-6" htmlFor="new-order-notes">Anything else you want fellow diners to know?</label>
-                        <div className="col-sm-6"> 
-                          <input className="form-control" type="text" id="new-order-notes" />
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div className="modal-footer">
-                    <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" className="btn btn-primary">Start your order</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <OrderForm />
           </div>
 
         </section>

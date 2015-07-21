@@ -75,7 +75,7 @@ var MealsPage = React.createClass({
       for (var j in this.state.restaurants) {
         console.log(this.state.restaurants[j].id)
         console.log(this.state.meals[i].restaurant)
-        if (this.state.restaurants[j].id == this.state.meals[i].restaurant) {
+        if (this.state.restaurants[j].id == this.state.meals[i].order) {
           var restaurant = this.state.restaurants[j].name
         }
       }

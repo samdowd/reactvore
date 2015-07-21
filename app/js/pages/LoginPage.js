@@ -37,8 +37,10 @@ var LoginPage = React.createClass({
               <h2 className="form-signin-heading">Please sign in</h2>
               <label htmlFor="username" className="sr-only">Username</label>
               <input type="text" name="username" value={this.state.username} onChange={this.updateUsername} id="username" className="form-control" placeholder="Username" required autofocus />
+              <br />
               <label htmlFor="password" className="sr-only">Password</label>
               <input type="password" name="password" value={this.state.password} onChange={this.updatePassword} id="password" className="form-control" placeholder="Password" required />
+              <br />
               <button onClick={this.login} name="login" className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             </form>
           </div>

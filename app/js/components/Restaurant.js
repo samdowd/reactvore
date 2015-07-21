@@ -18,7 +18,7 @@ var Restaurant = React.createClass({
       <div className="col-md-6">
         <div className="panel panel-default">
           <div className="panel-heading">
-            <h3 className="panel-title">{this.props.restaurant.name}</h3>
+            <h3 className="panel-title">Someone is headed to {this.props.restaurant.name}</h3>
           </div>
           <div className="panel-body">
             <div className="col-md-8">
