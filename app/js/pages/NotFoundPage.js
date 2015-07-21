@@ -5,10 +5,6 @@ import DocumentTitle from 'react-document-title';
 
 var NotFoundPage = React.createClass({
 
-  propTypes: {
-    currentUser: React.PropTypes.object.isRequired
-  },
-
   render() {
     return (
       <DocumentTitle title="404: Not Found">
