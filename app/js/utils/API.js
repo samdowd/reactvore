@@ -5,7 +5,7 @@ import request        from 'superagent';
 
 var API = {
 
-  root: '//localhost:4000/api/',
+  root: '//localvore-production.herokuapp.com/api/',
 
   normalizeResponse(response) {
     return camelizeKeys(response.body);
