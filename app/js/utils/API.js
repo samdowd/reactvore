@@ -5,7 +5,7 @@ import request        from 'superagent';
 
 var API = {
 
-  root: '//localvore-production.herokuapp.com/api/',
+  root: '//localhost:4000/api/',
 
   normalizeResponse(response) {
     return camelizeKeys(response.body);
@@ -40,10 +40,10 @@ var API = {
     });
   },
 
-  post(path, body) {
+  post(path, body, token) {
     var self = this;
     return new Promise((resolve, reject) => {
-      request.post(this.root + path, body)
+      request.post(this.root + path, body)//.set('Authentication').set('Authentication', token)
       .end(function(err, res) {
         if (!res.ok) {
           reject(self.normalizeResponse(res));

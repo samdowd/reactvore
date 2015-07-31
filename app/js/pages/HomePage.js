@@ -13,7 +13,7 @@ import RestaurantStore  from '../stores/RestaurantStore';
 import MenuSectionStore from '../stores/MenuSectionStore';
 import OrderStore       from '../stores/OrderStore';
 
-import Restaurant    from '../components/Restaurant';
+import Order         from '../components/Order';
 import MealForm      from '../components/MealForm';
 import OrderForm     from '../components/OrderForm';
 
@@ -56,7 +56,7 @@ var HomePage = React.createClass({
       <DocumentTitle title="Home">
         <section className="container">
 
-          {this.renderRestaurants()}
+          {this.renderOrders()}
           <button type="button" className="btn btn-default btn-lg col-md-12" data-toggle="modal" data-target='#newOrderModal'>
             <span className="glyphicon glyphicon-plus" aria-hidden="true"></span> <p>Create a new order!</p>
           </button>
@@ -70,20 +70,13 @@ var HomePage = React.createClass({
     );
   },
 
-  renderRestaurants() {
+  renderOrders() {
     var renders = []
-    for (var i in this.state.restaurants) {
-      var restaurant = this.state.restaurants[i]
-      if (restaurant.hasOrderAcceptingMeals) {
-
-        for (var j in this.state.orders) {
-          if (this.state.orders[i].bentley) {
-
-          }
-        }
-
+    for (var i in this.state.orders) {
+      var order = this.state.orders[i]
+      if (order.acceptingMeals) {
         renders.push(
-          <Restaurant key = {restaurant.url} restaurant = {restaurant} />
+          <Order key={order.id} order={order} />
         )
       }
     }

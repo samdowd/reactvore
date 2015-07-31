@@ -64,7 +64,6 @@ var LoginPage = React.createClass({
 
   login(e) {
     e.preventDefault()
-    console.log(this.state.username)
     UserActions.Login(this.state.username, this.state.password);
   },
 
